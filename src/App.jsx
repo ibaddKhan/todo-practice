@@ -1,4 +1,10 @@
 import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
+import GitHubStats from './GitHubStats';
+
+
+
 
 function App() {
   let [inpVal, setTask] = useState("");
@@ -18,6 +24,7 @@ function App() {
     todoArr[i] = newVal;
     setTodo([...todoArr]);
   }
+
   return (
     <>
       <form onSubmit={addTodo}>
@@ -36,6 +43,10 @@ function App() {
           </div>
         );
       })}
+ <div>
+      <h1>GitHub Stats App</h1>
+      <GitHubStats username={"githubUsername"} />
+    </div>
     </>
   );
 }
